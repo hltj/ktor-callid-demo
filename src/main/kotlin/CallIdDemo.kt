@@ -2,7 +2,6 @@ package me.hltj
 
 import io.ktor.application.*
 import io.ktor.client.HttpClient
-import io.ktor.client.engine.cio.CIO
 import io.ktor.client.request.get
 import io.ktor.features.*
 import io.ktor.http.HttpHeaders
@@ -16,7 +15,7 @@ import java.util.concurrent.atomic.AtomicLong
 
 fun main(args: Array<String>): Unit = io.ktor.server.cio.EngineMain.main(args)
 
-val httpClient = HttpClient(CIO)
+val httpClient = HttpClient()
 
 object MyLogger {
     val logger: Logger = LoggerFactory.getLogger(this::class.java)
